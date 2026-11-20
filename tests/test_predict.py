@@ -70,3 +70,12 @@ def test_the_model_beats_popularity_on_held_out_students(rec, small_data):
     test = [s["courses"] for s in small_data["test"]]
     m = evaluate(rec, train, test)["methods"]
     assert m["CourseGPT (this project)"]["all"]["mrr"] > m["popularity"]["all"]["mrr"] + 0.2
+
+
+def test_the_path_oracle_reference_row_is_added_when_goals_are_given(rec, small_data):
+    train = [s["courses"] for s in small_data["train"]]
+    test = small_data["test"]
+    m = evaluate(rec, train, [s["courses"] for s in test], [s["goal"] for s in test])["methods"]
+    oracle = m["oracle: knows the student's planted path"]["all"]
+    assert oracle["hits@1"] > 0.6
+    assert oracle["hits@1"] > m["last course (Markov)"]["all"]["hits@1"]

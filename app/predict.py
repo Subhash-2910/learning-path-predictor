@@ -139,6 +139,24 @@ class CoOccurrence:
         return np.log(total + 1e-3 * np.exp(self.pop) / np.exp(self.pop).sum())
 
 
+class PathOracle:
+    """Not a real method: it is told each student's planted path and predicts the next course on it.
+    It shows how much of the remaining error is noise in the data (electives, swaps, detours)."""
+    name = "oracle: knows the student's planted path"
+
+    def __init__(self, train_sequences):
+        self.pop = Popularity(train_sequences).scores
+        self.goal = None
+
+    def course_scores(self, completed):
+        scores = self.pop / 100  # popularity only breaks ties among the other courses
+        upcoming = [c for c in GOALS[self.goal] if c not in completed]
+        if upcoming:
+            scores = scores.copy()
+            scores[IDS.index(upcoming[0])] += 10
+        return scores
+
+
 # ----- Evaluation -------------------------------------------------------------------------------------------
 
 def shared_last_courses() -> set:
@@ -158,9 +176,14 @@ def cases(sequences):
             yield n, t, seq[:t], seq[t]
 
 
-def evaluate(recommender: Recommender, train_sequences, test_sequences) -> dict:
+def evaluate(recommender: Recommender, train_sequences, test_sequences, test_goals=None) -> dict:
+    """Rank of the true next course for every prefix of every test student. With `test_goals` (the planted
+    path of each test student) an oracle row is added as a reference upper bound."""
     position = {c: i for i, c in enumerate(IDS)}
     baselines = [Popularity(train_sequences), LastCourse(train_sequences), CoOccurrence(train_sequences)]
+    oracle = PathOracle(train_sequences) if test_goals else None
+    if oracle:
+        baselines.append(oracle)
     names = [b.name for b in baselines] + ["CourseGPT (this project)"]
     ranks = {name: [] for name in names}
     top1_valid = {name: [] for name in names}
@@ -168,6 +191,8 @@ def evaluate(recommender: Recommender, train_sequences, test_sequences) -> dict:
     shared = shared_last_courses()
     model_rows = [recommender.sequence_scores(seq) for seq in test_sequences]
     for n, t, prefix, target in cases(test_sequences):
+        if oracle:
+            oracle.goal = test_goals[n]
         exclude = [position[c] for c in prefix]
         ambiguous.append(prefix[-1] in shared)
         for name, scores in zip(names, [b.course_scores(prefix) for b in baselines] + [model_rows[n][t]]):
@@ -194,6 +219,7 @@ def metrics_table(metrics: dict) -> str:
     for name, m in metrics["methods"].items():
         a, s = m["all"], m["last_course_is_shared"]
         bold = "**" if "CourseGPT" in name else ""
+        name = f"*{name} (reference)*" if name.startswith("oracle") else name
         rows.append(f"| {bold}{name}{bold} | {a['hits@1']:.3f} | {a['hits@3']:.3f} | {a['hits@5']:.3f} | "
                     f"{a['mrr']:.3f} | {s['hits@1']:.3f} | {m['top1_prereqs_met']:.1%} |")
     return head + "\n".join(rows) + "\n"
@@ -228,8 +254,9 @@ if __name__ == "__main__":
 
     rec = Recommender.from_file()
     train_seq = [s["courses"] for s in load_split("train")]
-    test_seq = [s["courses"] for s in load_split("test")]
-    metrics = evaluate(rec, train_seq, test_seq)
+    test = load_split("test")
+    test_seq = [s["courses"] for s in test]
+    metrics = evaluate(rec, train_seq, test_seq, [s["goal"] for s in test])
     RESULTS.mkdir(exist_ok=True)
     (RESULTS / "metrics.json").write_text(json.dumps(metrics, indent=2) + "\n")
     table = metrics_table(metrics)
@@ -238,6 +265,8 @@ if __name__ == "__main__":
         f"Each test student's history is cut after every course; the method ranks all courses not yet taken and "
         f"we record the rank of the course the student really took next. 'Last course is shared' is the "
         f"{metrics['ambiguous_cases']} cases where the last course leads to different next courses on different "
-        f"planted paths, so the earlier history matters.\n\n" + table)
+        f"planted paths, so the earlier history matters. The oracle is not a usable method: it is told each "
+        f"student's planted path, so it marks how far noise in the data (electives, swaps, detours) caps any "
+        f"method.\n\n" + table)
     (RESULTS / "samples.md").write_text(samples_markdown(rec))
     print(table)

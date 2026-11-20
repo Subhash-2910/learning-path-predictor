@@ -53,6 +53,23 @@
       },
       "top1_prereqs_met": 0.8600070972320795
     },
+    "oracle: knows the student's planted path": {
+      "all": {
+        "mrr": 0.8312254981211172,
+        "median_rank": 1.0,
+        "hits@1": 0.7987934705464869,
+        "hits@3": 0.837473385379702,
+        "hits@5": 0.8550390347764372
+      },
+      "last_course_is_shared": {
+        "mrr": 0.8458595593710555,
+        "median_rank": 1.0,
+        "hits@1": 0.8145539906103286,
+        "hits@3": 0.8534167970787689,
+        "hits@5": 0.8708920187793427
+      },
+      "top1_prereqs_met": 1.0
+    },
     "CourseGPT (this project)": {
       "all": {
         "mrr": 0.8111453614203792,

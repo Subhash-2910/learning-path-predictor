@@ -74,7 +74,7 @@ def compare_itemsets(real: list[list[str]], generated: list[list[str]], min_supp
     found_real = {k: v for k, v in frequent_itemsets(real, min_support, max_size).items() if len(k) > 1}
     found_gen = {k: v for k, v in frequent_itemsets(generated, min_support, max_size).items() if len(k) > 1}
     both = set(found_real) & set(found_gen)
-    union = sorted(set(found_real) | set(found_gen), key=lambda k: -found_real.get(k, 0))
+    union = sorted(set(found_real) | set(found_gen), key=lambda k: (-found_real.get(k, 0), len(k), sorted(k)))
     r = np.array([found_real.get(k, support_of(k, real_sets)) for k in union])
     g = np.array([found_gen.get(k, support_of(k, gen_sets)) for k in union])
     by_size = {}

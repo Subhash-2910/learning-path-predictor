@@ -127,16 +127,6 @@
       },
       {
         "itemset": [
-          "CS101",
-          "DS201",
-          "MA101",
-          "ST101"
-        ],
-        "real": 0.2444,
-        "generated": 0.2551
-      },
-      {
-        "itemset": [
           "DS201",
           "MA101"
         ],
@@ -163,12 +153,13 @@
       },
       {
         "itemset": [
+          "CS101",
+          "DS201",
           "MA101",
-          "MA201",
           "ST101"
         ],
-        "real": 0.2415,
-        "generated": 0.241
+        "real": 0.2444,
+        "generated": 0.2551
       },
       {
         "itemset": [
@@ -177,6 +168,15 @@
         ],
         "real": 0.2415,
         "generated": 0.2414
+      },
+      {
+        "itemset": [
+          "MA101",
+          "MA201",
+          "ST101"
+        ],
+        "real": 0.2415,
+        "generated": 0.241
       },
       {
         "itemset": [
@@ -203,7 +203,7 @@
     "in_both": 98,
     "recall": 0.18525519848771266,
     "precision": 0.5240641711229946,
-    "support_correlation": 0.4744898903138799,
+    "support_correlation": 0.47448989031387967,
     "mean_abs_support_error": 0.06492758899676375,
     "by_size": {
       "2": {
@@ -324,16 +324,6 @@
       },
       {
         "itemset": [
-          "CS101",
-          "DS201",
-          "MA101",
-          "ST101"
-        ],
-        "real": 0.2444,
-        "generated": 0.0571
-      },
-      {
-        "itemset": [
           "DS201",
           "MA101"
         ],
@@ -360,12 +350,13 @@
       },
       {
         "itemset": [
+          "CS101",
+          "DS201",
           "MA101",
-          "MA201",
           "ST101"
         ],
-        "real": 0.2415,
-        "generated": 0.06
+        "real": 0.2444,
+        "generated": 0.0571
       },
       {
         "itemset": [
@@ -374,6 +365,15 @@
         ],
         "real": 0.2415,
         "generated": 0.1395
+      },
+      {
+        "itemset": [
+          "MA101",
+          "MA201",
+          "ST101"
+        ],
+        "real": 0.2415,
+        "generated": 0.06
       },
       {
         "itemset": [

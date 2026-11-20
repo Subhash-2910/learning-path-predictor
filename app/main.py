@@ -3,6 +3,7 @@
 Pick the courses you have completed, in the order you took them, and see the model's top-N next courses with
 their probabilities. "Not interested" hides a course from all later recommendations (kept in data/app.json).
 """
+import os
 import sys
 from pathlib import Path
 
@@ -25,7 +26,7 @@ def get_recommender() -> Recommender:
     return Recommender.from_file(MODEL_PATH)
 
 
-store = Store()
+store = Store(os.environ.get("DATA_PATH") or str(ROOT / "data" / "app.json"))
 st.title("🎓 Learning Path Predictor")
 st.caption("A small GPT trained on 8,000 (synthetic) student histories suggests what to study next.")
 

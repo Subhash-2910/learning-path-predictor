@@ -5,6 +5,5 @@ numpy>=1.26
 pandas>=2.0
 matplotlib>=3.8
 pytest>=8.0
-httpx
 # Frequent itemset miner and ranking metrics from the market-basket drill (numpy/pandas only)
 thilimarketbasket @ git+https://github.com/thili-ai/thilimarketbasket.git

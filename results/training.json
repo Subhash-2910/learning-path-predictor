@@ -156,7 +156,7 @@
   "best_val_loss": 1.1893,
   "best_val_perplexity": 3.285,
   "steps": 1890,
-  "seconds": 32.6,
+  "seconds": 27.0,
   "parameters": 104576,
   "train_config": {
     "epochs": 30,
