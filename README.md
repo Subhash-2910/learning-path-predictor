@@ -14,7 +14,7 @@ This project, 'Learning Path Predictor,' is an EdTech application designed to op
 
 Tick these off as you go, and commit after each one.
 
-- [ ] **1. Generate mock student course completion data as sequences of course IDs.**  
+- [x] **1. Generate mock student course completion data as sequences of course IDs.**  
       Hint: Generate synthetic data for course sequences, similar to mock retail transactions.
 - [ ] **2. Pretrain a small language model on these course ID sequences.**  
       Hint: Apply language model fine-tuning techniques from the drill to these course ID sequences.

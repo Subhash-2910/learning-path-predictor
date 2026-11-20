@@ -1,11 +1,5 @@
 """Your code. One stub per milestone; build them in order and keep each one small."""
 
-# --- Milestone 1: Generate mock student course completion data as sequences of course IDs.
-# Hint: Generate synthetic data for course sequences, similar to mock retail transactions.
-def milestone_1():  # TODO(milestone 1)
-    raise NotImplementedError("TODO(milestone 1)")
-
-
 # --- Milestone 2: Pretrain a small language model on these course ID sequences.
 # Hint: Apply language model fine-tuning techniques from the drill to these course ID sequences.
 def milestone_2():  # TODO(milestone 2)
