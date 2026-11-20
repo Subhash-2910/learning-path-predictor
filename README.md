@@ -20,7 +20,7 @@ Tick these off as you go, and commit after each one.
       Hint: Apply language model fine-tuning techniques from the drill to these course ID sequences.
 - [x] **3. Implement a function to predict the next likely course given a partial sequence.**  
       Hint: Use the trained model's prediction capabilities to forecast the next course ID.
-- [ ] **4. Create a Streamlit interface for students to input their completed courses and view recommendations.**  
+- [x] **4. Create a Streamlit interface for students to input their completed courses and view recommendations.**  
       Hint: Utilize Streamlit to build an interactive web application for user input and recommendation display.
 - [ ] **5. Analyze which course "itemsets" the model has learned.**  
       Hint: Examine the model's learned relationships between courses, possibly through embedding analysis or attention weights.

@@ -64,6 +64,20 @@ class Recommender:
         probs = self.next_course_probs(completed, exclude)
         return sorted(probs.items(), key=lambda kv: -kv[1])[:k]
 
+    def recommend(self, completed, k: int = 5, exclude=(), only_eligible: bool = False) -> list[dict]:
+        """Rows for the app: the top `k` courses with title, track, probability and missing prerequisites.
+        With `only_eligible`, courses whose prerequisites are not all completed are left out before
+        renormalising."""
+        exclude = set(exclude)
+        if only_eligible:
+            exclude |= {c for c in self.courses if not prereqs_met(c, set(completed))}
+        rows = []
+        for course, p in self.predict_next(completed, k, exclude):
+            missing = [q for q in BY_ID[course].prereqs if q not in completed]
+            rows.append({"course": course, "title": BY_ID[course].title, "track": BY_ID[course].track,
+                         "probability": p, "missing_prereqs": missing})
+        return rows
+
     @torch.no_grad()
     def sequence_scores(self, courses) -> np.ndarray:
         """One forward pass gives the prediction after every prefix: row t scores course t+1 given courses[:t]."""

@@ -4,12 +4,6 @@ They start skipped. Remove the `skip` line as you work on each milestone.
 """
 import pytest
 
-# Milestone 4: Create a Streamlit interface for students to input their completed courses and view recommendations.
-@pytest.mark.skip(reason="remove this line when you start milestone 4")
-def test_milestone_4():
-    raise NotImplementedError("write the test for milestone 4")
-
-
 # Milestone 5: Analyze which course "itemsets" the model has learned.
 @pytest.mark.skip(reason="remove this line when you start milestone 5")
 def test_milestone_5():
