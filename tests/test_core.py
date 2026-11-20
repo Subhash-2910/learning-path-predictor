@@ -4,12 +4,6 @@ They start skipped. Remove the `skip` line as you work on each milestone.
 """
 import pytest
 
-# Milestone 2: Pretrain a small language model on these course ID sequences.
-@pytest.mark.skip(reason="remove this line when you start milestone 2")
-def test_milestone_2():
-    raise NotImplementedError("write the test for milestone 2")
-
-
 # Milestone 3: Implement a function to predict the next likely course given a partial sequence.
 @pytest.mark.skip(reason="remove this line when you start milestone 3")
 def test_milestone_3():

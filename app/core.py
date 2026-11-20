@@ -1,11 +1,5 @@
 """Your code. One stub per milestone; build them in order and keep each one small."""
 
-# --- Milestone 2: Pretrain a small language model on these course ID sequences.
-# Hint: Apply language model fine-tuning techniques from the drill to these course ID sequences.
-def milestone_2():  # TODO(milestone 2)
-    raise NotImplementedError("TODO(milestone 2)")
-
-
 # --- Milestone 3: Implement a function to predict the next likely course given a partial sequence.
 # Hint: Use the trained model's prediction capabilities to forecast the next course ID.
 def milestone_3():  # TODO(milestone 3)

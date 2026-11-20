@@ -1,6 +1,9 @@
-streamlit
+# On Linux, install with --extra-index-url https://download.pytorch.org/whl/cpu to get the small CPU-only torch.
+torch>=2.4
+streamlit>=1.40
+numpy>=1.26
+pandas>=2.0
+pytest>=8.0
 httpx
-pytest
+# Frequent itemset miner and ranking metrics from the market-basket drill (numpy/pandas only)
 thilimarketbasket @ git+https://github.com/thili-ai/thilimarketbasket.git
-numpy
-pandas

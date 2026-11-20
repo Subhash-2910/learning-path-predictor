@@ -16,7 +16,7 @@ Tick these off as you go, and commit after each one.
 
 - [x] **1. Generate mock student course completion data as sequences of course IDs.**  
       Hint: Generate synthetic data for course sequences, similar to mock retail transactions.
-- [ ] **2. Pretrain a small language model on these course ID sequences.**  
+- [x] **2. Pretrain a small language model on these course ID sequences.**  
       Hint: Apply language model fine-tuning techniques from the drill to these course ID sequences.
 - [ ] **3. Implement a function to predict the next likely course given a partial sequence.**  
       Hint: Use the trained model's prediction capabilities to forecast the next course ID.
