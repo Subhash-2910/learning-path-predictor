@@ -1,4 +1,5 @@
 """Milestone 4: the Streamlit interface, driven headlessly with Streamlit's AppTest."""
+import re
 from pathlib import Path
 
 import pytest
@@ -19,7 +20,8 @@ def app(monkeypatch, tmp_path):
 
 
 def shown(at) -> str:
-    return "\n".join(m.value for m in at.markdown)
+    """The recommendation rows only, e.g. '**1. WD102 · JavaScript**  \nWeb Development'."""
+    return "\n".join(m.value for m in at.markdown if re.match(r"\*\*\d+\. ", m.value))
 
 
 def test_recommends_top_n_for_chosen_completed_courses(app):
@@ -28,7 +30,7 @@ def test_recommends_top_n_for_chosen_completed_courses(app):
     assert "Recommended next" in [s.value for s in app.subheader]
     assert "1. WD102 · JavaScript" in shown(app)
     app.slider[0].set_value(3).run()
-    assert sum(f"{i}. " in shown(app) for i in range(1, 11)) == 3
+    assert len(shown(app).splitlines()) == 2 * 3  # 3 rows of two lines each
 
 
 def test_not_interested_hides_a_course_and_is_remembered(app):
@@ -58,3 +60,13 @@ def test_history_can_be_shared_in_the_url(monkeypatch, tmp_path):
     at.run()
     assert at.multiselect[0].value == ["WD101"]
     assert "1. WD102 · JavaScript" in shown(at)
+
+
+def test_similar_courses_and_the_analysis_tab_render(app):
+    app.multiselect[0].set_value(["CS101"]).run()
+    assert not app.exception
+    assert "Explore similar courses" in [s.value for s in app.subheader]
+    assert app.selectbox[0].options  # the recommended courses
+    assert any("similarity" in m.value for m in app.markdown)
+    assert [t.label for t in app.tabs] == ["Recommend", "What the model learned"]
+    assert any("Itemsets" in m.value for m in app.tabs[1].markdown)

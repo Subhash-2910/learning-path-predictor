@@ -13,7 +13,7 @@ def small_data():
 def tiny_model(small_data):
     """A small model trained for a few seconds, so tests never need the committed checkpoint."""
     courses = lambda split: [s["courses"] for s in small_data[split]]
-    model, vocab, history = train(courses("train"), courses("val"), TrainConfig(epochs=6, batch_size=64),
+    model, vocab, history = train(courses("train"), courses("val"), TrainConfig(epochs=12, batch_size=64),
                                   ModelConfig(vocab_size=len(Vocab()), d_model=32, dropout=0.0),
                                   log=lambda *_: None)
     return model, vocab, history

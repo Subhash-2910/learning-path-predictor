@@ -13,9 +13,9 @@ from pathlib import Path
 
 import numpy as np
 
-from app.catalog import BUNDLES, BY_ID, COURSES, GOAL_WEIGHTS, GOALS, prereqs_met
+from app.catalog import BUNDLES, BY_ID, COURSES, GOAL_WEIGHTS, GOALS, ROOT, prereqs_met
 
-DATASET_DIR = Path("dataset")
+DATASET_DIR = ROOT / "dataset"
 
 P_ELECTIVE = 0.12   # after each course, chance of squeezing in an unrelated course
 P_SWAP = 0.15       # chance per student of swapping two neighbouring courses (when prerequisites allow it)

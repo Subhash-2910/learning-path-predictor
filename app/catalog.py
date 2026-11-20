@@ -4,6 +4,10 @@ Everything here is made up. Because we write the paths ourselves, we know the ri
 what the model has learned (milestone 5).
 """
 from dataclasses import dataclass, field
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent.parent  # the project folder, wherever the app is started from
 
 
 @dataclass(frozen=True)

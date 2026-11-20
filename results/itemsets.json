@@ -1,0 +1,744 @@
+{
+  "itemsets": {
+    "min_support": 0.05,
+    "real_itemsets": 529,
+    "generated_itemsets": 646,
+    "in_both": 522,
+    "recall": 0.9867674858223062,
+    "precision": 0.8080495356037152,
+    "support_correlation": 0.9843883213965323,
+    "mean_abs_support_error": 0.013704823889739662,
+    "by_size": {
+      "2": {
+        "real": 126,
+        "generated": 133,
+        "both": 123
+      },
+      "3": {
+        "real": 203,
+        "generated": 238,
+        "both": 201
+      },
+      "4": {
+        "real": 200,
+        "generated": 275,
+        "both": 198
+      }
+    },
+    "top": [
+      {
+        "itemset": [
+          "CS101",
+          "ST101"
+        ],
+        "real": 0.4695,
+        "generated": 0.4766
+      },
+      {
+        "itemset": [
+          "CS101",
+          "MA101"
+        ],
+        "real": 0.399,
+        "generated": 0.3907
+      },
+      {
+        "itemset": [
+          "CS101",
+          "DS201"
+        ],
+        "real": 0.3939,
+        "generated": 0.4111
+      },
+      {
+        "itemset": [
+          "DS201",
+          "ST101"
+        ],
+        "real": 0.3939,
+        "generated": 0.4101
+      },
+      {
+        "itemset": [
+          "CS101",
+          "DS201",
+          "ST101"
+        ],
+        "real": 0.3939,
+        "generated": 0.4099
+      },
+      {
+        "itemset": [
+          "CS101",
+          "CS102"
+        ],
+        "real": 0.3605,
+        "generated": 0.3663
+      },
+      {
+        "itemset": [
+          "MA101",
+          "ST101"
+        ],
+        "real": 0.3417,
+        "generated": 0.3269
+      },
+      {
+        "itemset": [
+          "CS101",
+          "CS202"
+        ],
+        "real": 0.3094,
+        "generated": 0.3331
+      },
+      {
+        "itemset": [
+          "CS101",
+          "MA101",
+          "ST101"
+        ],
+        "real": 0.3058,
+        "generated": 0.3043
+      },
+      {
+        "itemset": [
+          "MA101",
+          "MA201"
+        ],
+        "real": 0.2805,
+        "generated": 0.2791
+      },
+      {
+        "itemset": [
+          "CS101",
+          "MA201"
+        ],
+        "real": 0.2594,
+        "generated": 0.2684
+      },
+      {
+        "itemset": [
+          "CS101",
+          "MA101",
+          "MA201"
+        ],
+        "real": 0.2594,
+        "generated": 0.2677
+      },
+      {
+        "itemset": [
+          "CS101",
+          "DS201",
+          "MA101",
+          "ST101"
+        ],
+        "real": 0.2444,
+        "generated": 0.2551
+      },
+      {
+        "itemset": [
+          "DS201",
+          "MA101"
+        ],
+        "real": 0.2444,
+        "generated": 0.2557
+      },
+      {
+        "itemset": [
+          "CS101",
+          "DS201",
+          "MA101"
+        ],
+        "real": 0.2444,
+        "generated": 0.2555
+      },
+      {
+        "itemset": [
+          "DS201",
+          "MA101",
+          "ST101"
+        ],
+        "real": 0.2444,
+        "generated": 0.2554
+      },
+      {
+        "itemset": [
+          "MA101",
+          "MA201",
+          "ST101"
+        ],
+        "real": 0.2415,
+        "generated": 0.241
+      },
+      {
+        "itemset": [
+          "MA201",
+          "ST101"
+        ],
+        "real": 0.2415,
+        "generated": 0.2414
+      },
+      {
+        "itemset": [
+          "MA101",
+          "MA202"
+        ],
+        "real": 0.2266,
+        "generated": 0.2206
+      },
+      {
+        "itemset": [
+          "MA202",
+          "ST101"
+        ],
+        "real": 0.2246,
+        "generated": 0.2196
+      }
+    ]
+  },
+  "popularity_baseline": {
+    "min_support": 0.05,
+    "real_itemsets": 529,
+    "generated_itemsets": 187,
+    "in_both": 98,
+    "recall": 0.18525519848771266,
+    "precision": 0.5240641711229946,
+    "support_correlation": 0.4744898903138799,
+    "mean_abs_support_error": 0.06492758899676375,
+    "by_size": {
+      "2": {
+        "real": 126,
+        "generated": 123,
+        "both": 69
+      },
+      "3": {
+        "real": 203,
+        "generated": 61,
+        "both": 28
+      },
+      "4": {
+        "real": 200,
+        "generated": 3,
+        "both": 1
+      }
+    },
+    "top": [
+      {
+        "itemset": [
+          "CS101",
+          "ST101"
+        ],
+        "real": 0.4695,
+        "generated": 0.3103
+      },
+      {
+        "itemset": [
+          "CS101",
+          "MA101"
+        ],
+        "real": 0.399,
+        "generated": 0.2692
+      },
+      {
+        "itemset": [
+          "CS101",
+          "DS201"
+        ],
+        "real": 0.3939,
+        "generated": 0.2549
+      },
+      {
+        "itemset": [
+          "DS201",
+          "ST101"
+        ],
+        "real": 0.3939,
+        "generated": 0.1824
+      },
+      {
+        "itemset": [
+          "CS101",
+          "DS201",
+          "ST101"
+        ],
+        "real": 0.3939,
+        "generated": 0.1266
+      },
+      {
+        "itemset": [
+          "CS101",
+          "CS102"
+        ],
+        "real": 0.3605,
+        "generated": 0.242
+      },
+      {
+        "itemset": [
+          "MA101",
+          "ST101"
+        ],
+        "real": 0.3417,
+        "generated": 0.1926
+      },
+      {
+        "itemset": [
+          "CS101",
+          "CS202"
+        ],
+        "real": 0.3094,
+        "generated": 0.2042
+      },
+      {
+        "itemset": [
+          "CS101",
+          "MA101",
+          "ST101"
+        ],
+        "real": 0.3058,
+        "generated": 0.1311
+      },
+      {
+        "itemset": [
+          "MA101",
+          "MA201"
+        ],
+        "real": 0.2805,
+        "generated": 0.1172
+      },
+      {
+        "itemset": [
+          "CS101",
+          "MA201"
+        ],
+        "real": 0.2594,
+        "generated": 0.1925
+      },
+      {
+        "itemset": [
+          "CS101",
+          "MA101",
+          "MA201"
+        ],
+        "real": 0.2594,
+        "generated": 0.0824
+      },
+      {
+        "itemset": [
+          "CS101",
+          "DS201",
+          "MA101",
+          "ST101"
+        ],
+        "real": 0.2444,
+        "generated": 0.0571
+      },
+      {
+        "itemset": [
+          "DS201",
+          "MA101"
+        ],
+        "real": 0.2444,
+        "generated": 0.159
+      },
+      {
+        "itemset": [
+          "CS101",
+          "DS201",
+          "MA101"
+        ],
+        "real": 0.2444,
+        "generated": 0.1094
+      },
+      {
+        "itemset": [
+          "DS201",
+          "MA101",
+          "ST101"
+        ],
+        "real": 0.2444,
+        "generated": 0.0816
+      },
+      {
+        "itemset": [
+          "MA101",
+          "MA201",
+          "ST101"
+        ],
+        "real": 0.2415,
+        "generated": 0.06
+      },
+      {
+        "itemset": [
+          "MA201",
+          "ST101"
+        ],
+        "real": 0.2415,
+        "generated": 0.1395
+      },
+      {
+        "itemset": [
+          "MA101",
+          "MA202"
+        ],
+        "real": 0.2266,
+        "generated": 0.0993
+      },
+      {
+        "itemset": [
+          "MA202",
+          "ST101"
+        ],
+        "real": 0.2246,
+        "generated": 0.111
+      }
+    ]
+  },
+  "planted": {
+    "bundles": [
+      {
+        "bundle": "DS301 \u2192 EL102",
+        "planted": 0.6,
+        "real": 0.525,
+        "generated": 0.584
+      },
+      {
+        "bundle": "BU201 \u2192 EL101",
+        "planted": 0.6,
+        "real": 0.509,
+        "generated": 0.522
+      }
+    ],
+    "paths": [
+      {
+        "path": "ml_engineer",
+        "first_four": [
+          "CS101",
+          "MA101",
+          "ST101",
+          "DS201"
+        ],
+        "real": 0.2444,
+        "generated": 0.2551
+      },
+      {
+        "path": "data_analyst",
+        "first_four": [
+          "CS101",
+          "ST101",
+          "DS201",
+          "DS202"
+        ],
+        "real": 0.1383,
+        "generated": 0.1531
+      },
+      {
+        "path": "backend",
+        "first_four": [
+          "CS101",
+          "CS102",
+          "CS202",
+          "WD202"
+        ],
+        "real": 0.1439,
+        "generated": 0.1566
+      },
+      {
+        "path": "full_stack",
+        "first_four": [
+          "WD101",
+          "WD102",
+          "CS101",
+          "WD201"
+        ],
+        "real": 0.1299,
+        "generated": 0.1301
+      },
+      {
+        "path": "security",
+        "first_four": [
+          "CS101",
+          "CS102",
+          "MA102",
+          "SE201"
+        ],
+        "real": 0.0821,
+        "generated": 0.0781
+      },
+      {
+        "path": "cs_theory",
+        "first_four": [
+          "MA101",
+          "MA102",
+          "CS101",
+          "CS102"
+        ],
+        "real": 0.0892,
+        "generated": 0.0791
+      },
+      {
+        "path": "product",
+        "first_four": [
+          "BU101",
+          "EN101",
+          "WD101",
+          "UX201"
+        ],
+        "real": 0.0671,
+        "generated": 0.0649
+      },
+      {
+        "path": "statistician",
+        "first_four": [
+          "MA101",
+          "ST101",
+          "MA202",
+          "MA201"
+        ],
+        "real": 0.2051,
+        "generated": 0.2059
+      }
+    ],
+    "generated_valid_order": 0.936375,
+    "generated_repeats": 0.0435,
+    "generated_prereq_violations": 0.003813365111375928,
+    "mean_length": {
+      "real": 6.617875,
+      "generated": 6.818125
+    },
+    "course_frequency_correlation": 0.997869873431231
+  },
+  "embeddings": {
+    "same_track_cosine": 0.1452038586139679,
+    "other_track_cosine": -0.013147911056876183,
+    "path_neighbours_cosine": 0.08183993399143219,
+    "bundles": [
+      {
+        "bundle": "DS301 + EL102",
+        "cosine": -0.109,
+        "rank_among_neighbours_of_first": 34
+      },
+      {
+        "bundle": "BU201 + EL101",
+        "cosine": 0.075,
+        "rank_among_neighbours_of_first": 16
+      }
+    ],
+    "nearest": {
+      "CS101": [
+        "WD101",
+        "BU101",
+        "MA101"
+      ],
+      "MA101": [
+        "WD101",
+        "BU101",
+        "CS102"
+      ],
+      "MA102": [
+        "EL103",
+        "EL104",
+        "CS202"
+      ],
+      "ST101": [
+        "EL101",
+        "MA101",
+        "EL103"
+      ],
+      "EN101": [
+        "EL104",
+        "EL101",
+        "MA203"
+      ],
+      "CS102": [
+        "MA101",
+        "ST101",
+        "WD201"
+      ],
+      "CS201": [
+        "SE302",
+        "SE301",
+        "DS304"
+      ],
+      "CS202": [
+        "SE201",
+        "MA102",
+        "EL102"
+      ],
+      "CS203": [
+        "CS201",
+        "MA301",
+        "SE302"
+      ],
+      "CS301": [
+        "SE301",
+        "CS203",
+        "WD302"
+      ],
+      "CS302": [
+        "DS304",
+        "SE301",
+        "SE302"
+      ],
+      "CS303": [
+        "MA301",
+        "DS305",
+        "SE301"
+      ],
+      "MA201": [
+        "BU201",
+        "MA202",
+        "MA203"
+      ],
+      "MA202": [
+        "CS201",
+        "MA201",
+        "MA203"
+      ],
+      "MA203": [
+        "CS303",
+        "ST201",
+        "DS305"
+      ],
+      "MA301": [
+        "DS304",
+        "CS303",
+        "DS305"
+      ],
+      "ST201": [
+        "DS303",
+        "MA203",
+        "DS305"
+      ],
+      "ST301": [
+        "DS304",
+        "DS303",
+        "MA301"
+      ],
+      "DS201": [
+        "CS201",
+        "MA202",
+        "UX201"
+      ],
+      "DS202": [
+        "DS301",
+        "DS304",
+        "DS303"
+      ],
+      "DS301": [
+        "ST301",
+        "DS305",
+        "ST201"
+      ],
+      "DS302": [
+        "DS305",
+        "DS304",
+        "DS303"
+      ],
+      "DS303": [
+        "DS304",
+        "DS305",
+        "MA301"
+      ],
+      "DS304": [
+        "DS305",
+        "DS303",
+        "MA301"
+      ],
+      "DS305": [
+        "DS304",
+        "DS303",
+        "DS302"
+      ],
+      "WD101": [
+        "MA101",
+        "BU101",
+        "CS101"
+      ],
+      "WD102": [
+        "ST201",
+        "UX301",
+        "UX201"
+      ],
+      "WD201": [
+        "UX201",
+        "DS304",
+        "DS301"
+      ],
+      "WD202": [
+        "WD301",
+        "DS202",
+        "DS305"
+      ],
+      "WD301": [
+        "ST301",
+        "MA301",
+        "WD302"
+      ],
+      "WD302": [
+        "SE301",
+        "CS302",
+        "WD301"
+      ],
+      "SE201": [
+        "EL104",
+        "CS202",
+        "EL102"
+      ],
+      "SE301": [
+        "SE302",
+        "CS302",
+        "DS305"
+      ],
+      "SE302": [
+        "SE301",
+        "CS302",
+        "DS304"
+      ],
+      "BU101": [
+        "WD101",
+        "MA101",
+        "CS101"
+      ],
+      "BU201": [
+        "CS302",
+        "UX301",
+        "UX201"
+      ],
+      "BU202": [
+        "DS305",
+        "DS304",
+        "CS302"
+      ],
+      "UX201": [
+        "BU201",
+        "WD201",
+        "BU202"
+      ],
+      "UX301": [
+        "DS304",
+        "ST301",
+        "MA301"
+      ],
+      "EL101": [
+        "EL104",
+        "EL103",
+        "EL102"
+      ],
+      "EL102": [
+        "EL104",
+        "EL103",
+        "EL101"
+      ],
+      "EL103": [
+        "EL104",
+        "EL101",
+        "EL102"
+      ],
+      "EL104": [
+        "EL103",
+        "EL101",
+        "EL102"
+      ]
+    }
+  }
+}

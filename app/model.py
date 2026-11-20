@@ -23,9 +23,10 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from app.catalog import IDS
+from app.catalog import IDS, ROOT
 
-MODEL_PATH = Path("model/course_gpt.pt")
+MODEL_PATH = ROOT / "model" / "course_gpt.pt"
+RESULTS = ROOT / "results"
 SPECIALS = ["<pad>", "<bos>", "<eos>"]
 PAD, BOS, EOS = 0, 1, 2
 
@@ -237,8 +238,8 @@ if __name__ == "__main__":
     val_c = [s["courses"] for s in load_split("val")]
     model, vocab, history = train(train_c, val_c)
     save(model, vocab)
-    Path("results").mkdir(exist_ok=True)
-    Path("results/training.json").write_text(json.dumps(history, indent=2) + "\n")
+    RESULTS.mkdir(exist_ok=True)
+    (RESULTS / "training.json").write_text(json.dumps(history, indent=2) + "\n")
     print(f"{history['parameters']:,} parameters, best val loss {history['best_val_loss']} "
           f"(perplexity {history['best_val_perplexity']}) at epoch {history['best_epoch']}, "
           f"{history['seconds']} s -> {MODEL_PATH}")

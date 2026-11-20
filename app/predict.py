@@ -18,10 +18,10 @@ import numpy as np
 import torch
 from thilimarketbasket.evaluate import rank_of, summarise
 
-from app.catalog import BY_ID, GOALS, IDS, prereqs_met
+from app.catalog import BY_ID, GOALS, IDS, ROOT, prereqs_met
 from app.model import BOS, MODEL_PATH, CourseGPT, Vocab, load
 
-RESULTS = Path("results")
+RESULTS = ROOT / "results"
 KS = (1, 3, 5)
 
 
