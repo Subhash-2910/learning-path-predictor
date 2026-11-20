@@ -18,7 +18,7 @@ Tick these off as you go, and commit after each one.
       Hint: Generate synthetic data for course sequences, similar to mock retail transactions.
 - [x] **2. Pretrain a small language model on these course ID sequences.**  
       Hint: Apply language model fine-tuning techniques from the drill to these course ID sequences.
-- [ ] **3. Implement a function to predict the next likely course given a partial sequence.**  
+- [x] **3. Implement a function to predict the next likely course given a partial sequence.**  
       Hint: Use the trained model's prediction capabilities to forecast the next course ID.
 - [ ] **4. Create a Streamlit interface for students to input their completed courses and view recommendations.**  
       Hint: Utilize Streamlit to build an interactive web application for user input and recommendation display.

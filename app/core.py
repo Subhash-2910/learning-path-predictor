@@ -1,11 +1,5 @@
 """Your code. One stub per milestone; build them in order and keep each one small."""
 
-# --- Milestone 3: Implement a function to predict the next likely course given a partial sequence.
-# Hint: Use the trained model's prediction capabilities to forecast the next course ID.
-def milestone_3():  # TODO(milestone 3)
-    raise NotImplementedError("TODO(milestone 3)")
-
-
 # --- Milestone 4: Create a Streamlit interface for students to input their completed courses and view recommendations.
 # Hint: Utilize Streamlit to build an interactive web application for user input and recommendation display.
 def milestone_4():  # TODO(milestone 4)
